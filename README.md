@@ -43,8 +43,8 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="#">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs  no GitHub"/><br>
+      <a href="https://github.com/Diego-0212">
+        <img src="https://avatars.githubusercontent.com/u/106314110?v=4" width="100px;" alt="Foto do Steve Jobs  no GitHub"/><br>
         <sub>
           <b>Diego</b>
         </sub>
