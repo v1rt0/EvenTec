@@ -30,7 +30,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       <a href="https://github.com/Carolina-Silva">
         <img src="https://avatars.githubusercontent.com/u/65463404?v=4" width="100px;" alt="Foto da Carolina no GitHub"/><br>
         <sub>
-          <b>Carolina</b>
+          <b>Carolina Silva</b>
         </sub>
       </a>
     </td>
@@ -38,23 +38,23 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       <a href="#">
         <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Daniel no GitHub"/><br>
         <sub>
-          <b>Daniel</b>
+          <b>Daniel Santos</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/Diego-0212">
-        <img src="https://avatars.githubusercontent.com/u/106314110?v=4" width="100px;" alt="Foto do Steve Jobs  no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/106314110?v=4" width="100px;" alt="Foto do Diego no GitHub"/><br>
         <sub>
-          <b>Diego</b>
+          <b>Diego Ribeiro</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/felipemaximo01">
-        <img src="https://avatars.githubusercontent.com/u/102770157?v=4" width="100px;" alt="Foto do Steve Jobs no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/102770157?v=4" width="100px;" alt="Foto do Felipe no GitHub"/><br>
         <sub>
-          <b>Felipe</b>
+          <b>Felipe Maximo</b>
         </sub>
       </a>
     </td>
@@ -63,33 +63,33 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
    <tr>
     <td align="center">
       <a href="https://github.com/Guilherme512z">
-        <img src="https://avatars.githubusercontent.com/u/111024626?v=4" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/111024626?v=4" width="100px;" alt="Foto do Guilherme no GitHub"/><br>
         <sub>
-          <b>Guilherme</b>
+          <b>Guilherme Henrique</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/NicolyAvelino">
-        <img src="https://avatars.githubusercontent.com/u/65463907?v=4" width="100px;" alt="Foto do Mark Zuckerberg no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/65463907?v=4" width="100px;" alt="Foto da Nicoly no GitHub"/><br>
         <sub>
-          <b>Nicoly </b>
+          <b>Nicoly Avelino</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/nikolasyan">
-        <img src="https://avatars.githubusercontent.com/u/106313973?v=4" width="100px;" alt="Foto do Steve Jobs"/><br>
+        <img src="https://avatars.githubusercontent.com/u/106313973?v=4" width="100px;" alt="Foto do Nikolas no GitHub"/><br>
         <sub>
-          <b>Níkolas</b>
+          <b>Níkolas Costa</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/v1rt0">
-        <img src="https://avatars.githubusercontent.com/u/74341111?v=4" width="100px;" alt="Foto do Steve Jobs"/><br>
+        <img src="https://avatars.githubusercontent.com/u/74341111?v=4" width="100px;" alt="Foto do Victor no GitHub"/><br>
         <sub>
-          <b>Víctor</b>
+          <b>Víctor Viana</b>
         </sub>
       </a>
     </td>
