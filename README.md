@@ -2,18 +2,21 @@
 
 
 #  Projeto Integrador 2022
-
-
-
 ## Introdução
 
-
 ### Problema:  
-Como podemos organizar eventos nas FATECs para que tenham um alcance maior, e favorecer que alunos de todas as FATECs e o público externo possam facilmente se registrar e participar desses eventos? 
+<div style="text-align:justify">
+  Como podemos organizar eventos nas FATECs para que tenham um alcance maior, e favorecer que alunos de todas as FATECs e o público externo possam facilmente se registrar e participar desses eventos? 
+</div>
+
 
 ### Objetivo:
-Muitos dos eventos realizados nas FATECs não possuem uma grande divulgação, devido aos acessos nos meios de comunicação atuais nas plataformas das faculdades não serem tão expressivos por parte dos alunos e comunidade. Os eventos realizados nas FATECs são dos mais diversos temas, e tem muita importância para a carreira acadêmica dos alunos, e, para a comunidade externa. Também é importante haver uma emissão de certificados, que ajudar a enriquecer a carreira acadêmica e aumentar o interesse geral do público.
+<div style="text-align:justify">
+  Muitos dos eventos realizados nas FATECs não possuem uma grande divulgação, devido aos acessos nos meios de comunicação atuais nas plataformas das faculdades não serem tão expressivos por parte dos alunos e comunidade. Os eventos realizados nas FATECs são dos mais diversos temas, e tem muita importância para a carreira acadêmica dos alunos, e, para a comunidade externa. Também é importante haver uma emissão de certificados, que ajudar a enriquecer a carreira acadêmica e aumentar o interesse geral do público.
 Nosso objetivo é facilitar o controle de eventos nas FATECs e sua emissão de certificados. Sendo uma plataforma que permita que alunos e funcionários da FATEC e até mesmo o público externo (caso o evento permita) busquem e inscrevam-se para participar de eventos acontecendo nas faculdades.  
+
+</div>
+
 
 ## 💻 Tecnologias:
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) 
@@ -35,8 +38,8 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="#">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Daniel no GitHub"/><br>
+      <a href="https://github.com/DanieoSantus">
+        <img src="https://avatars.githubusercontent.com/u/87383017?v=4" width="100px;" alt="Foto do Daniel no GitHub"/><br>
         <sub>
           <b>Daniel Santos</b>
         </sub>
