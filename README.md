@@ -7,8 +7,7 @@
   <a href="#Introducao">Introdução</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#colaboradores">Colaboradores</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#colaboradores">Colaboradores</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 ---
@@ -43,6 +42,7 @@ Você pode visualizar o layout do projeto através [desse link](<https://www.fig
 <div id= "tecnologias">
 
 ## 💻 Tecnologias:
+
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) 
 
 </div>
@@ -56,7 +56,7 @@ Você pode visualizar o layout do projeto através [desse link](<https://www.fig
 
 <div id= "colaboradores">
 
-## 🧑‍💻 Colaboradores:
+## 💻 Colaboradores:
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
 <table>
@@ -136,7 +136,6 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
 <br><br>
 
-## :memo: Licença
-<!-- Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/Four-PROA/-h1-Demoday-h1-/blob/main/LICENSE) para mais detalhes. -->
+
 
 <a href="#eventec"> :arrow_up: Voltar ao topo </a>
