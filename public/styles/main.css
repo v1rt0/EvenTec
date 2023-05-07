@@ -1,0 +1,27 @@
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.girando {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background-color: #6b6bb7;
+  animation: girar 10s linear infinite;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 100%;
+  padding: 10px; }
+  .girando p {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
