@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Evento</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/partials/header.css">
+    <link rel="stylesheet" href="./css/partials/forms.css">
+    <link rel="stylesheet" href="./css/partials/pageForm.css">
+
+   
+</head>
+
+<body id="pageForm">
+    <div id="container">
+        <header class="page-header">
+            <div class="col">
+                <div class="top-bar-container">
+                    <a href="/">
+                        <img src="./img/Voltar.svg" alt="Voltar">
+                    </a>
+                    <img src="./img/Eventec.svg" alt="Logo">
+                </div>
+            </div>
+
+            <div class="header-content">
+                <strong>Que incrível que você quer cadastrar seu evento</strong>
+            </div>
+        </header>
+
+        <main>
+            <!-- formulario -->
+            <form action="/cadastrar" method="post" id="create-form">
+                <fieldset>
+                    <legend>Dados do evento:</legend>
+
+                    <!-- titulo -->
+                    <div class="input-block">
+                        <label for="title">Título</label>
+                        <input name="titulo" id="titulo" required>
+                    </div>
+
+                    <!-- link foto -->
+                    <div class="input-block">
+                        <label for="avatar">Link da sua foto <small>(comece com //http)</small></label>
+                        <input name="img" id="img" type="url" required>
+                    </div>
+
+                    <!-- Descricao -->
+                    <div class="textarea-block">
+                        <label for="desc">Descrição</label>
+                        <textarea name="sobre" id="sobre" required></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Categoria</legend>
+                    <div class="select-block">
+                        <label for="subject">Tema</label>
+                        <select name="categoria" id="categoria">
+                            <option value="">Selecione uma opção</option>
+                            <option value="Tecnologia">Tecnologia</option>
+                            <option value="Educação e Empreendedorismo">Educação e Empreendedorismo</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset id="schedule-items" >
+                    <legend>Data e Hora</legend>
+                    <div class="schedule-item">
+                        <div class="select-block">
+                            <label for="date">Data</label>
+                            <input 
+                                id="data" 
+                                name="data" 
+                                type="date"
+                                value=""
+                            >
+                        </div>
+                        <div class="input-block">
+                            <label for="time-from">Das</label>
+                            <input type="time" id="horaIni" name="horaIni" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="time-to">Até</label>
+                            <input type="time" id="horaFim" name="horaFim" required>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+            <footer>
+                <p>
+                    <img src="./img/Atenção.svg" alt="Atenção">
+                    Importante!<br>Preencha todos os dados
+                </p>
+                <button type="submit" form="create-form">Salvar cadastro</button>
+            </footer>
+        </main>
+
+    </div>
+    <script src="./scripts/main.js"></script>
+
+</body>
+
+</html>

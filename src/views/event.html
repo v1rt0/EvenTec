@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Eventos</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/partials/header.css">
+    <link rel="stylesheet" href="/css/partials/forms.css">
+    <link rel="stylesheet" href="./css/partials/pageEvents.css">
+
+    
+</head>
+
+<body id="pageEvent">
+    <div id="container">
+        <header class="page-header">
+            <div class="col">
+                <div class="top-bar-container">
+                    <a href="/"><img src="./img/Voltar.svg" alt="Voltar"></a>
+                    <img src="./img/Eventec.svg" alt="Logo">
+                </div>
+            </div>
+
+            <div class="header-content">
+                <strong>Estes são os eventos disponíveis</strong>
+                <form class="search" action="">
+                    <div class="busca">
+                        <label for="txtBusca">Pesquisar evento:</label>
+                        <div class="algItem">
+                            <input 
+                            type="text" id="txtBusca" class="txtBusca" placeholder="Escreva aqui"
+                            value=""
+                            />
+                            <button class="btn-search"> 
+                                <img src="./img/search.png" class="btnBusca" alt="Buscar" />
+                            </button>
+                        </div>
+                </form>
+            </div>
+        </header>
+        <main>
+            <!-- Primeiro card -->
+            {%for event in events %}
+            <article class="card-item">
+                <header>
+                    <img src="{{event.img}}" />
+                    <div>
+                        <strong class="nome-evento">
+                            
+                                {{event.titulo}}
+                            
+                        </strong>
+                        <span>{{event.categoria}}</span>
+                    </div>
+                </header>
+
+                <p>{{event.sobre}}</p>
+
+                <div class="cardData">
+                    <div>
+                        <span>Dia</span>
+                        <h2>{{event.data}}</h2>
+                    </div>
+                    <div>
+                        <span>Horário</span>
+                        <h2>{{event.horaIni}}</h2>
+                    </div>
+                </div>
+
+                <footer>
+                    <p>xxxxxxxxxx</p>
+                    <button type="button">Se cadastrar</button>
+                </footer>
+
+            </article>
+            {%endfor %}
+        </main>
+    </div>
+    <script src="./scripts/searchEvent.js"></script>
+
+</body>
+
+</html>
