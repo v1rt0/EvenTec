@@ -62,34 +62,10 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/Carolina-Silva">
-        <img src="https://avatars.githubusercontent.com/u/65463404?v=4" width="100px;" alt="Foto da Carolina no GitHub"/><br>
-        <sub>
-          <b>Carolina Silva</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/DanieoSantus">
-        <img src="https://avatars.githubusercontent.com/u/87383017?v=4" width="100px;" alt="Foto do Daniel no GitHub"/><br>
-        <sub>
-          <b>Daniel Santos</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
       <a href="https://github.com/Diego-0212">
         <img src="https://avatars.githubusercontent.com/u/106314110?v=4" width="100px;" alt="Foto do Diego no GitHub"/><br>
         <sub>
           <b>Diego Ribeiro</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/felipemaximo01">
-        <img src="https://avatars.githubusercontent.com/u/102770157?v=4" width="100px;" alt="Foto do Felipe no GitHub"/><br>
-        <sub>
-          <b>Felipe Maximo</b>
         </sub>
       </a>
     </td>
@@ -101,14 +77,6 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         <img src="https://avatars.githubusercontent.com/u/111024626?v=4" width="100px;" alt="Foto do Guilherme no GitHub"/><br>
         <sub>
           <b>Guilherme Henrique</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/NicolyAvelino">
-        <img src="https://avatars.githubusercontent.com/u/65463907?v=4" width="100px;" alt="Foto da Nicoly no GitHub"/><br>
-        <sub>
-          <b>Nicoly Avelino</b>
         </sub>
       </a>
     </td>
