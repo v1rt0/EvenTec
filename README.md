@@ -69,9 +69,6 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         </sub>
       </a>
     </td>
-  </tr>
-
-   <tr>
     <td align="center">
       <a href="https://github.com/Guilherme512z">
         <img src="https://avatars.githubusercontent.com/u/111024626?v=4" width="100px;" alt="Foto do Guilherme no GitHub"/><br>
@@ -98,6 +95,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
   </tr>
 </table>
+
 
 
 </div>
