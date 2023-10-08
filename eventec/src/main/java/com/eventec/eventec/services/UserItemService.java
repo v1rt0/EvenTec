@@ -25,10 +25,6 @@ public class UserItemService{
         return userItemRepository.save(userItem);
     }
 
-//    public List<UserItem> consultaUsuario(){
- //       return userItemRepository.findAll();
-  //  }
-
     public UserItem createUserItem(UserItem userItem){
         return userItemRepository.save(userItem);
     }

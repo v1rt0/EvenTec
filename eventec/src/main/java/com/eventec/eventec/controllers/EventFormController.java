@@ -10,30 +10,26 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
-@Controller
+@RestController
+@CrossOrigin
 public class EventFormController {
     @Autowired
     private EventItemService eventItemService;
 
-    @GetMapping("/create-event")
-    public String showCreatedForm(EventItem eventItem){
-        return "form";
-    }
-
     @PostMapping("/event")
-    public String createEventItem(@Valid EventItem eventItem, BindingResult result, Model model) {
+    public String createEventItem(@RequestBody @Valid EventItem eventItem, BindingResult result, Model model) {
         EventItem item = new EventItem();
         item.setTitle(eventItem.getTitle());
-        item.setImg(eventItem.getImg());
         item.setDescription(eventItem.getDescription());
         item.setCategory(eventItem.getCategory());
-        item.setDateEvent(eventItem.getDateEvent());
-        item.setHourStart(eventItem.getHourStart());
-        item.setHourEnd(eventItem.getHourEnd());
+        // item.setDateEvent(eventItem.());
 
-        eventItemService.save((eventItem));
+        eventItemService.save(eventItem);
         return "redirect:/";
     }
 }
+

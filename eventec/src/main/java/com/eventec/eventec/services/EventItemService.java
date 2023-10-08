@@ -24,7 +24,6 @@ public class EventItemService {
 
         return eventItemRepository.save(eventItem);
     }
-
     public void delete(EventItem eventItem) {
         eventItemRepository.delete(eventItem);
     }
