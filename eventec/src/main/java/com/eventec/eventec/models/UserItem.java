@@ -1,10 +1,12 @@
 package com.eventec.eventec.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,7 +27,8 @@ public class UserItem implements Serializable {
     public enum UserType {
         aluno,
         usuarioComum,
-        professor
+        professor,
+        diretor
     }
     @Enumerated(EnumType.STRING)
     private UserType userType;
@@ -40,6 +43,11 @@ public class UserItem implements Serializable {
     private String unidade;
     private String semestre;
     private String curso;
+
+    // Relação com EventItem
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<EventItem> events;
 
     @Override
     public String toString() {

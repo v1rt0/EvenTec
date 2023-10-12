@@ -1,5 +1,6 @@
 package com.eventec.eventec.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,11 +21,18 @@ public class EventItem implements Serializable {
     private String category;
     @Column(name = "date_event")
     private LocalDateTime dateEvent;
+    private String address;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    @JoinColumn(name = "userid")
+    private UserItem user;
+
 
     @Override
     public String toString() {
         return String.format(
-                "EventItem{id=%d, title='%s', description='%s', category='%s', dateEvent='%s'}",
-                id, title, description, category, dateEvent);
+                "EventItem{id=%d, title='%s', description='%s', category='%s', dateEvent='%s', address='%s'}",
+                id, title, description, category, dateEvent, address);
     }
 }
