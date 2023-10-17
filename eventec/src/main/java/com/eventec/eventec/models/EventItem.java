@@ -4,7 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -27,7 +28,6 @@ public class EventItem implements Serializable {
     @JsonBackReference
     @JoinColumn(name = "userid")
     private UserItem user;
-
 
     @Override
     public String toString() {

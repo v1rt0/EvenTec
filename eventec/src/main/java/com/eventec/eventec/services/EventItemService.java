@@ -36,5 +36,7 @@ public class EventItemService {
         eventItemRepository.deleteById(id);
     }
 
-
+    public List<EventItem> getAllEvents() {
+        return eventItemRepository.findAll();
+    }
 }

@@ -704,3 +704,6 @@ SELECT * FROM user_item WHERE email = edsu AND password = 123 [42102-214]
 2023-10-03 11:34:28 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]USER_ITEMS"; expected "UPDATE, USE"; SQL statement:
 USER_ITEMS [42001-214]
+2023-10-16 23:10:46 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SEENDERECO LECT * FROM USER_ITEMS ENDERECO"; expected "SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"; SQL statement:
+SEENDERECO LECT * FROM USER_ITEMS ENDERECO [42001-214]

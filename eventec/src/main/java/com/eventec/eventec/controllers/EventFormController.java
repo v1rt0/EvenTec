@@ -74,7 +74,6 @@ public class EventFormController {
 
     @PutMapping("/eventEdit/{id}")
     public ResponseEntity<?> updateEvent(@PathVariable Long id, @RequestBody @Valid EventItem updatedEvent) {
-        // Verifique se o evento com o ID especificado existe no banco de dados
         Optional<EventItem> existingEventOpt = eventItemService.findById(id);
 
         if (existingEventOpt.isPresent()) {
@@ -89,6 +88,10 @@ public class EventFormController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Evento não encontrado.");
         }
     }
-
+    @GetMapping("/allEvents")
+    public ResponseEntity<?> getAllEvents() {
+        List<EventItem> events = eventItemService.getAllEvents();
+        return ResponseEntity.ok(events);
+    }
 
 }

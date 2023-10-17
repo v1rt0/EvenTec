@@ -9,4 +9,7 @@ import java.util.List;
 @Repository
 public interface EventItemRepository extends JpaRepository<EventItem, Long> {
     List<EventItem> findByUser(UserItem user);
+
+    List<EventItem> findAll();
+
 }

@@ -23,6 +23,11 @@ public class UserItem implements Serializable {
     private String email;
 
     private String password;
+    private String zipCode;
+    private String state;
+    private String city;
+    private String neighborhood;
+    private String street;
 
     public enum UserType {
         aluno,
@@ -51,7 +56,7 @@ public class UserItem implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("userItem{userId=%d, userName=%s, email=%s, password=%s, cpf=%d}",
-                userid, userName, email, password, cpf);
+        return String.format("userItem{userId=%d, userName=%s, email=%s, password=%s, cpf=%d, zipCode=%s, state=%s, city=%s, neighborhood=%s, street=%s}",
+                userid, userName, email, password, cpf, zipCode, state, city, neighborhood, street);
     }
 }
