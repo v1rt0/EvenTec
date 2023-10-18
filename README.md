@@ -10,7 +10,8 @@
 Nosso objetivo é facilitar o controle de eventos nas FATECs e sua emissão de certificados. Sendo uma plataforma que permita que alunos e funcionários da FATEC e até mesmo o público externo (caso o evento permita) busquem e inscrevam-se para participar de eventos acontecendo nas faculdades.  
 </div>
 <br><br>
-#### Instalação
+
+## Instalação
 <p>Repositório Front-End: https://github.com/nikolasyan/eventec-front</p>
 <p>Repositório Back-end: https://github.com/nikolasyan/EvenTec</p>
 <br><br>
