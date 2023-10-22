@@ -6,6 +6,7 @@ import com.eventec.eventec.repositories.EventItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +33,12 @@ public class EventItemService {
         return eventItemRepository.existsById(id);
     }
 
+    public List<EventItem> getPendingEventsByAddress(String address) {
+        return eventItemRepository.findByApprovedAndAddress(false, address);
+    }
+    public List<EventItem> getApprovedEvents() {
+        return eventItemRepository.findAllByApproved(true);
+    }
     public void deleteById(Long id) {
         eventItemRepository.deleteById(id);
     }
@@ -39,4 +46,6 @@ public class EventItemService {
     public List<EventItem> getAllEvents() {
         return eventItemRepository.findAll();
     }
-}
+
+    }
+

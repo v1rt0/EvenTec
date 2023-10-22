@@ -43,13 +43,11 @@ public class UserItem implements Serializable {
 
     private String emailInstitucional;
 
-    //Aluno
     private Long ra;
     private String unidade;
     private String semestre;
     private String curso;
 
-    // Relação com EventItem
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<EventItem> events;

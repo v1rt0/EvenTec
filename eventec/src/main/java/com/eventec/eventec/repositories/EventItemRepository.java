@@ -10,6 +10,9 @@ import java.util.List;
 public interface EventItemRepository extends JpaRepository<EventItem, Long> {
     List<EventItem> findByUser(UserItem user);
 
+    List<EventItem> findByApprovedAndAddress(boolean approved, String address);
+    List<EventItem> findAllByApproved(boolean approved);
+
     List<EventItem> findAll();
 
 }
