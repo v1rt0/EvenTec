@@ -8,8 +8,6 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -46,14 +44,11 @@ public class EventFormController {
 
     @GetMapping("/myEvents")
     public ResponseEntity<?> getMyEvents(@RequestParam String email, @RequestParam String password) {
-        System.out.println("Buscando eventos para o usuário: " + email); // Log para diagnóstico
 
         Optional<UserItem> user = userItemService.getByEmailAndPassword(email, password);
 
         if (user.isPresent()) {
             List<EventItem> myEvents = eventItemService.getEventsByUser(user.get());
-
-            System.out.println("Eventos encontrados: " + myEvents.size()); // Log para diagnóstico
 
             return ResponseEntity.ok(myEvents);
         } else {
@@ -95,30 +90,23 @@ public class EventFormController {
     @GetMapping("/pendingEvents")
     public ResponseEntity<?> getPendingEvents(@RequestParam String email, @RequestParam String password) {
 
-        System.out.println("Email recebido: " + email);
-        System.out.println("Senha recebida: " + password);
-
         Optional<UserItem> user = userItemService.getByEmailAndPassword(email, password);
 
         if (!user.isPresent()) {
-            System.out.println("Usuário não encontrado ou credenciais incorretas.");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário não autenticado.");
         }
 
         if (user.get().getUserType() != UserItem.UserType.diretor) {
-            System.out.println("Usuário não é um diretor.");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário não é um diretor.");
         }
 
         String unidade = user.get().getUnidade();
         if (unidade == null || unidade.trim().isEmpty()) {
-            System.out.println("Unidade do diretor não especificada.");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Unidade do diretor não especificada.");
         }
 
         List<EventItem> pendingEvents = eventItemService.getPendingEventsByAddress(unidade);
 
-        System.out.println("Eventos pendentes encontrados: " + pendingEvents.size());
         return ResponseEntity.ok(pendingEvents);
     }
 

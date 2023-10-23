@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 

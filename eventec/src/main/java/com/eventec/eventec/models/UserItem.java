@@ -54,7 +54,7 @@ public class UserItem implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("userItem{userId=%d, userName=%s, email=%s, password=%s, cpf=%d, zipCode=%s, state=%s, city=%s, neighborhood=%s, street=%s}",
+        return String.format("userItem{userid=%d, userName=%s, email=%s, password=%s, cpf=%d, zipCode=%s, state=%s, city=%s, neighborhood=%s, street=%s}",
                 userid, userName, email, password, cpf, zipCode, state, city, neighborhood, street);
     }
 }

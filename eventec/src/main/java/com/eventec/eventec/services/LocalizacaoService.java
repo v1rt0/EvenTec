@@ -1,7 +1,6 @@
 package com.eventec.eventec.services;
 import com.eventec.eventec.models.Endereco;
 import com.eventec.eventec.repositories.CepRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

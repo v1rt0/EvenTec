@@ -44,11 +44,10 @@ public class BrasilApiCepRepository implements CepRepository {
                         logger.error("Erro ao consultar CEP {}: {}", cep, errorContent);
                     }
                 }
-                throw new RuntimeException(String.format("Erro na resposta da API ao consultar CEP %s: %d - %s", cep, connection.getResponseCode(), errorContent));
+                throw new IllegalStateException(String.format("Erro na resposta da API ao consultar CEP %s: %d - %s", cep, connection.getResponseCode(), errorContent));
             }
         } catch (Exception e) {
-            logger.error("Erro ao buscar CEP " + cep, e);
-            throw new RuntimeException("Erro ao buscar CEP " + cep, e);
+            throw new IllegalStateException("Erro ao buscar CEP " + cep, e);
         }
     }
 }

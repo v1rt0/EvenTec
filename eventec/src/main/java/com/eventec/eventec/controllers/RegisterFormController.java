@@ -8,13 +8,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Optional;
 
 @Controller
 @RequestMapping("/api/users")
 public class RegisterFormController {
+
+    private static final String INTERNAL_SERVER_ERROR_MESSAGE = "Internal server error";
+    private static final String USER_NOT_FOUND_MESSAGE = "User not found";
+    private static final String CROSS_ORIGIN_URL = "http://localhost:3000";
 
     @Autowired
     private UserItemService userItemService;
@@ -30,7 +33,7 @@ public class RegisterFormController {
         this.userItemRepository = userItemRepository;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = CROSS_ORIGIN_URL)
     @GetMapping("/myAccount")
     public ResponseEntity<?> getAccountDetails(@RequestParam String email, @RequestParam String password) {
         try {
@@ -38,14 +41,14 @@ public class RegisterFormController {
             if (userItemOpt.isPresent()) {
                 return new ResponseEntity<>(userItemOpt.get(), HttpStatus.OK);
             } else {
-                return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+                return new ResponseEntity<>(USER_NOT_FOUND_MESSAGE, HttpStatus.NOT_FOUND);
             }
         } catch (Exception e) {
-            return new ResponseEntity<>("Internal server error", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(INTERNAL_SERVER_ERROR_MESSAGE, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = CROSS_ORIGIN_URL)
     @DeleteMapping("/deleteAccount")
     public ResponseEntity<?> deleteAccount(@RequestParam String email, @RequestParam String password) {
         try {
@@ -55,14 +58,14 @@ public class RegisterFormController {
                 userItemRepository.delete(userItem);
                 return new ResponseEntity<>("Account deleted successfully", HttpStatus.OK);
             } else {
-                return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+                return new ResponseEntity<>(USER_NOT_FOUND_MESSAGE, HttpStatus.NOT_FOUND);
             }
         } catch (Exception e) {
-            return new ResponseEntity<>("Internal server error", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(INTERNAL_SERVER_ERROR_MESSAGE, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = CROSS_ORIGIN_URL)
     @PostMapping("/changePassword")
     public ResponseEntity<?> changePassword(@RequestParam String email, @RequestParam String currentPassword, @RequestParam String newPassword) {
         try {
@@ -76,11 +79,11 @@ public class RegisterFormController {
                 return new ResponseEntity<>("Invalid current password", HttpStatus.BAD_REQUEST);
             }
         } catch (Exception e) {
-            return new ResponseEntity<>("Internal server error", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(INTERNAL_SERVER_ERROR_MESSAGE, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = CROSS_ORIGIN_URL)
     @PostMapping("/create")
     public @ResponseBody ResponseEntity<UserItem> createUser(@RequestBody UserItem userItem) {
         UserItem createdUser = userItemService.createUserItem(userItem);

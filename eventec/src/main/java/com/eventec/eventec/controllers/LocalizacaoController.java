@@ -1,7 +1,5 @@
 package com.eventec.eventec.controllers;
-import com.eventec.eventec.config.StringToCep;
 import com.eventec.eventec.models.Endereco;
-import com.eventec.eventec.models.EventItem;
 import com.eventec.eventec.services.EventItemService;
 import com.eventec.eventec.services.LocalizacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
