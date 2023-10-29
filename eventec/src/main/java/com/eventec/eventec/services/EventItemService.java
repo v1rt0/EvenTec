@@ -4,6 +4,7 @@ import com.eventec.eventec.models.EventItem;
 import com.eventec.eventec.models.UserItem;
 import com.eventec.eventec.repositories.EventItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -47,4 +48,7 @@ public class EventItemService {
     }
 
     }
+
+
+
 

@@ -2,6 +2,8 @@ package com.eventec.eventec.controllers;
 
 import com.eventec.eventec.models.EventItem;
 import com.eventec.eventec.models.UserItem;
+import com.eventec.eventec.models.SubscriptionItem;
+import com.eventec.eventec.repositories.SubscriptionRepository;
 import com.eventec.eventec.services.EventItemService;
 import com.eventec.eventec.services.UserItemService;
 import jakarta.validation.Valid;
@@ -22,6 +24,10 @@ public class EventFormController {
 
     @Autowired
     private UserItemService userItemService;
+
+    @Autowired
+    private SubscriptionRepository subscriptionRepository;
+
 
     @PostMapping("/event")
     public ResponseEntity<?> createEventItem(@RequestBody @Valid EventItem eventItem) {
@@ -136,4 +142,13 @@ public class EventFormController {
         return ResponseEntity.ok(approvedEvents);
     }
 
+    @GetMapping("/eventUsers/{eventId}")
+    public ResponseEntity<List<SubscriptionItem>> getEventUsers(@PathVariable Long eventId) {
+        try {
+            List<SubscriptionItem> users = subscriptionRepository.findAllByEvent_Id(eventId);
+            return ResponseEntity.ok(users);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
 }

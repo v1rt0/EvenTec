@@ -8,6 +8,7 @@ import com.eventec.eventec.repositories.UserItemRepository;
 import com.eventec.eventec.repositories.EventItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 import java.util.Optional;
 
@@ -24,7 +25,6 @@ public class SubscriptionService {
     private EventItemRepository eventItemRepository;
 
     public SubscriptionItem subscribe(Long userid, Long eventId) throws Exception {
-        // Buscando o usuário e o evento pelos seus IDs
         UserItem user = userItemRepository.findById(userid)
                 .orElseThrow(() -> new Exception("Usuário não encontrado!"));
 
@@ -54,5 +54,9 @@ public class SubscriptionService {
 
     public void unsubscribe(Long subscriptionId) {
         subscriptionRepository.deleteById(subscriptionId);
+    }
+
+    public List<SubscriptionItem> getUserSubscriptions(Long userId) {
+        return subscriptionRepository.findByUser_Userid(userId);
     }
 }
