@@ -39,7 +39,7 @@ public class CertificationItem implements Serializable {
             this.eventTitle = subscription.getTitle();
             this.eventDate = LocalDateTime.parse(subscription.getDateEvent());
             this.eventId = subscription.getEvent().getId();
-            
+
         }
     }
 

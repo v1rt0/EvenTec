@@ -45,7 +45,7 @@ public class SubscriptionItem implements Serializable {
     @PrePersist
     @PreUpdate
     public void updateUserNameTitle() {
-        if (userName != null || title != null || dateEvent != null || address != null) {
+        if (user != null || title != null || dateEvent != null || address != null) {
             this.userName = user.getUserName();
             this.title = event.getTitle();
             this.dateEvent = String.valueOf(event.getDateEvent());
