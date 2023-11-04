@@ -3,6 +3,8 @@ package com.eventec.eventec.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.catalina.User;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -19,6 +21,7 @@ public class CertificationItem implements Serializable {
     @JoinColumn(name = "subscription_id")
     private SubscriptionItem subscription;
 
+    private Long userid; // Agora representa o ID do usuário
     private String userName;
     private String eventTitle;
     private LocalDateTime eventDate;
@@ -27,11 +30,12 @@ public class CertificationItem implements Serializable {
     private Long eventId;
 
     public Long getEventId() {
-        if(subscription != null && subscription.getEvent() != null) {
+        if (subscription != null && subscription.getEvent() != null) {
             return subscription.getEvent().getId();
         }
         return null;
     }
+
     @PrePersist
     public void preFillFields() {
         if (subscription != null) {
@@ -39,7 +43,7 @@ public class CertificationItem implements Serializable {
             this.eventTitle = subscription.getTitle();
             this.eventDate = LocalDateTime.parse(subscription.getDateEvent());
             this.eventId = subscription.getEvent().getId();
-
+            this.userid = subscription.getUser().getUserid();
         }
     }
 
@@ -51,6 +55,7 @@ public class CertificationItem implements Serializable {
                 ", userName='" + userName + '\'' +
                 ", eventTitle='" + eventTitle + '\'' +
                 ", eventDate=" + eventDate +
+                ", userId=" + userid +
                 '}';
     }
 }

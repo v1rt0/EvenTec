@@ -18,6 +18,10 @@ public class CertificationService {
     @Autowired
     private SubscriptionRepository subscriptionRepository;
 
+    public List<CertificationItem> getCertificatesByUserid(Long userid) {
+        return certificationRepository.findAllByUserid(userid);
+    }
+
     public void generateCertificatesForEvent(Long eventId, List<Long> userIds) {
         List<SubscriptionItem> subscriptions = subscriptionRepository.findAllByEvent_Id(eventId);
 

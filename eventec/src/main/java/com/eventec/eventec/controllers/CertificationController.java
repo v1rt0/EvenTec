@@ -1,4 +1,5 @@
 package com.eventec.eventec.controllers;
+import com.eventec.eventec.models.CertificationItem;
 import org.springframework.web.bind.annotation.*;
 
 import com.eventec.eventec.services.CertificationService;
@@ -23,4 +24,17 @@ public class CertificationController {
             return ResponseEntity.badRequest().body("Erro ao gerar certificados: " + e.getMessage());
         }
     }
+
+    @GetMapping("/user/{userid}")
+    public ResponseEntity<List<CertificationItem>> getCertificationsByUserId(@PathVariable Long userid) {
+        List<CertificationItem> certifications = certificationService.getCertificatesByUserid(userid);
+
+        if (certifications.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(certifications);
+        }
+    }
+
+
 }
