@@ -137,7 +137,7 @@ public class RegisterFormController {
                 userItemService.save(userItem); // Update the confirmation state in the database
 
                 String confirmationSuccessUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
-                        .path("resources/templates/confirmationSuccess.html")
+                        .path("/confirmationSuccess.html")
                         .toUriString();
 
                 RedirectView redirectView = new RedirectView(confirmationSuccessUrl);
