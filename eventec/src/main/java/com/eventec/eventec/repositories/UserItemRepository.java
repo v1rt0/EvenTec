@@ -12,4 +12,5 @@ public interface UserItemRepository extends JpaRepository<UserItem, Long> {
     //@Query(value = "SELECT * FROM user_items WHERE email = :email AND password = :password", nativeQuery = true)
     Optional<UserItem> findUserByEmailAndPassword(String email, String password);
 
+    Optional<UserItem> findUserByEmail(String email);
 }

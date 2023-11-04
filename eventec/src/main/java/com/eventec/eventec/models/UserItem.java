@@ -29,6 +29,21 @@ public class UserItem implements Serializable {
     private String neighborhood;
     private String street;
 
+    public enum EmailValidationType {
+        COMMON,
+        INSTITUTIONAL
+    }
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private EmailValidationType emailValidationType;
+
+    @Column
+    private String validationCode;
+
+    @Column
+    private boolean emailConfirmed;
+
     public enum UserType {
         aluno,
         usuarioComum,
