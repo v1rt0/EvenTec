@@ -98,34 +98,29 @@ public class RegisterFormController {
     @CrossOrigin(origins = CROSS_ORIGIN_URL)
     @PostMapping("/create")
     public @ResponseBody ResponseEntity<UserItem> createUser(@RequestBody UserItem userItem) {
-        if (userItem.getUserType() == UserItem.UserType.aluno ||
-                userItem.getUserType() == UserItem.UserType.professor ||
-                userItem.getUserType() == UserItem.UserType.diretor) {
-
-            userItem.setEmailValidationType(UserItem.EmailValidationType.INSTITUTIONAL);
-            userItem.setEmail(userItem.getEmailInstitucional()); // Set the email address
-        } else {
-            userItem.setEmailValidationType(UserItem.EmailValidationType.COMMON);
-        }
-
-        userItem.setEmailConfirmed(false); // Define initially as not confirmed
-
-        // Generate the validation code and store it in the database
         String validationCode = ValidationCodeGenerator.generateValidationCode(16);
         userItem.setValidationCode(validationCode);
 
-        UserItem createdUser = userItemService.createUserItem(userItem);
+        if (userItem.getUserType() == UserItem.UserType.aluno ||
+                userItem.getUserType() == UserItem.UserType.professor ||
+                userItem.getUserType() == UserItem.UserType.diretor) {
+            userItem.setEmailValidationType(UserItem.EmailValidationType.INSTITUTIONAL);
+            emailService.sendValidationEmail(userItem.getEmailInstitucional(), validationCode);
+        } else {
+            userItem.setEmailValidationType(UserItem.EmailValidationType.COMMON);
+            emailService.sendValidationEmail(userItem.getEmail(), validationCode);
+        }
 
-        // Send the email confirmation
-        emailService.sendValidationEmail(userItem.getEmail(), validationCode);
+        UserItem createdUser = userItemService.createUserItem(userItem);
 
         return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 
+
     @CrossOrigin(origins = CROSS_ORIGIN_URL)
     @GetMapping("/confirmEmail")
     public RedirectView confirmEmail(@RequestParam("email") String email, @RequestParam("code") String code) {
-        Optional<UserItem> userItemOpt = userItemRepository.findUserByEmail(email);
+        Optional<UserItem> userItemOpt = userItemRepository.findUserByEmailOrEmailInstitucionalAndEmailValidationType(email, email, UserItem.EmailValidationType.INSTITUTIONAL);
 
         if (userItemOpt.isPresent()) {
             UserItem userItem = userItemOpt.get();
@@ -134,7 +129,7 @@ public class RegisterFormController {
             if (!userItem.isEmailConfirmed() && userItem.getValidationCode().equals(code)) {
                 userItem.setEmailConfirmed(true);
                 logger.info("Email confirmed successfully for: {}", email);
-                userItemService.save(userItem); // Update the confirmation state in the database
+                userItemService.save(userItem);
 
                 String confirmationSuccessUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
                         .path("/confirmationSuccess.html")
@@ -142,23 +137,14 @@ public class RegisterFormController {
 
                 RedirectView redirectView = new RedirectView(confirmationSuccessUrl);
                 return redirectView;
-            } else {
-                // You can redirect to an error page if the code is invalid.
-                String confirmationErrorUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
-                        .path("/confirmationError.html")
-                        .toUriString();
-
-                RedirectView redirectView = new RedirectView(confirmationErrorUrl);
-                return redirectView;
             }
-        } else {
-            // Redirect to a "User Not Found" page.
-            String userNotFoundUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
-                    .path("/userNotFound.html")
-                    .toUriString();
-
-            RedirectView redirectView = new RedirectView(userNotFoundUrl);
-            return redirectView;
         }
+
+        String userNotFoundUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("/userNotFound.html")
+                .toUriString();
+
+        RedirectView redirectView = new RedirectView(userNotFoundUrl);
+        return redirectView;
     }
 }
