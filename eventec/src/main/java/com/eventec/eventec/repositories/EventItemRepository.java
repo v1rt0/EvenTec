@@ -11,8 +11,8 @@ public interface EventItemRepository extends JpaRepository<EventItem, Long> {
     List<EventItem> findByUser(UserItem user);
 
     List<EventItem> findByApprovedAndAddress(boolean approved, String address);
-    List<EventItem> findAllByApproved(boolean approved);
-
     List<EventItem> findAll();
+    List<EventItem> findByApprovedAndAbertoPublico(boolean approved, boolean abertoPublico);
+    List<EventItem> findByApproved(boolean approved);
 
 }

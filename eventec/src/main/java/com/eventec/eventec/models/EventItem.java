@@ -24,6 +24,9 @@ public class EventItem implements Serializable {
     private Double addressLat;
     private Double addressLng;
     private boolean approved;
+    private boolean abertoPublico;
+    private String typeEvent;
+    private String locationEvent;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
@@ -33,8 +36,8 @@ public class EventItem implements Serializable {
     @Override
     public String toString() {
         return String.format(
-                "EventItem{id=%d, title='%s', description='%s', category='%s', dateEvent='%s', address='%s', addressLat='%f', addressLng='%f', approved='%s'}",
-                id, title, description, category, dateEvent, address, addressLat, addressLng, approved);
+                "EventItem{id=%d, title='%s', description='%s', category='%s', dateEvent='%s', address='%s', addressLat='%f', addressLng='%f', approved='%s', abertoPublico='%s', typeEvent='%s', locationEvent= '%s'}",
+                id, title, description, category, dateEvent, address, addressLat, addressLng, approved, abertoPublico, typeEvent, locationEvent);
     }
 
 

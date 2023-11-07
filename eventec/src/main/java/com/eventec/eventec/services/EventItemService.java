@@ -35,9 +35,7 @@ public class EventItemService {
     public List<EventItem> getPendingEventsByAddress(String address) {
         return eventItemRepository.findByApprovedAndAddress(false, address);
     }
-    public List<EventItem> getApprovedEvents() {
-        return eventItemRepository.findAllByApproved(true);
-    }
+
     public void deleteById(Long id) {
         eventItemRepository.deleteById(id);
     }
@@ -46,7 +44,14 @@ public class EventItemService {
         return eventItemRepository.findAll();
     }
 
+    public List<EventItem> getApprovedEventsForCommonUser() {
+        return eventItemRepository.findByApprovedAndAbertoPublico(true, true);
     }
+
+    public List<EventItem> getApprovedEventsForInstitutionalUser() {
+        return eventItemRepository.findByApproved(true);
+    }
+}
 
 
 

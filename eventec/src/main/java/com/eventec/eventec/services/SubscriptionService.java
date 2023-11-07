@@ -9,8 +9,10 @@ import com.eventec.eventec.repositories.EventItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Map;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class SubscriptionService {
@@ -58,5 +60,17 @@ public class SubscriptionService {
 
     public List<SubscriptionItem> getUserSubscriptions(Long userId) {
         return subscriptionRepository.findByUser_Userid(userId);
+    }
+
+    public Map<String, Long> countEventsWithMostSubscriptions() {
+        List<Object[]> eventSubscriptionCounts = subscriptionRepository.countEventsWithSubscriptions();
+
+        Map<String, Long> eventsWithMostSubscriptions = eventSubscriptionCounts.stream()
+                .collect(Collectors.toMap(
+                        objects -> (String) objects[0],
+                        objects -> (Long) objects[1]
+                ));
+
+        return eventsWithMostSubscriptions;
     }
 }

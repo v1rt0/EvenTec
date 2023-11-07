@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.Map;
 import java.util.List;
 
 @RestController
@@ -41,6 +41,16 @@ public class SubscriptionController {
         try {
             List<SubscriptionItem> subscriptions = subscriptionService.getUserSubscriptions(userId);
             return ResponseEntity.ok(subscriptions);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/most-subscribed-events")
+    public ResponseEntity<?> getMostSubscribedEvents() {
+        try {
+            Map<String, Long> mostSubscribedEvents = subscriptionService.countEventsWithMostSubscriptions();
+            return ResponseEntity.ok(mostSubscribedEvents);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }

@@ -136,11 +136,26 @@ public class EventFormController {
         }
     }
 
-    @GetMapping("/approvedEvents")
-    public ResponseEntity<?> getApprovedEvents() {
-        List<EventItem> approvedEvents = eventItemService.getApprovedEvents();
-        return ResponseEntity.ok(approvedEvents);
+    @RestController
+    @RequestMapping("/approvedEvents/{userType}")
+    public class EventController {
+        @Autowired
+        private EventItemService eventItemService;
+
+        @GetMapping
+        public ResponseEntity<List<EventItem>> getApprovedEvents(@PathVariable String userType) {
+            if ("usuarioComum".equals(userType)) {
+                List<EventItem> approvedEvents = eventItemService.getApprovedEventsForCommonUser();
+                return ResponseEntity.ok(approvedEvents);
+            } else if ("diretor".equals(userType) || "professor".equals(userType) || "aluno".equals(userType)) {
+                List<EventItem> approvedEvents = eventItemService.getApprovedEventsForInstitutionalUser();
+                return ResponseEntity.ok(approvedEvents);
+            }
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
     }
+
+
 
     @GetMapping("/eventUsers/{eventId}")
     public ResponseEntity<List<SubscriptionItem>> getEventUsers(@PathVariable Long eventId) {
