@@ -3,7 +3,6 @@ package com.eventec.eventec.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.catalina.User;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

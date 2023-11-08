@@ -4,7 +4,8 @@ import java.util.Base64;
 
 public class ValidationCodeGenerator {
     private static final SecureRandom random = new SecureRandom();
-
+    private ValidationCodeGenerator() {
+    }
     public static String generateValidationCode(int length) {
         byte[] bytes = new byte[length];
         random.nextBytes(bytes);

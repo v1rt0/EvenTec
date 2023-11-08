@@ -65,12 +65,10 @@ public class SubscriptionService {
     public Map<String, Long> countEventsWithMostSubscriptions() {
         List<Object[]> eventSubscriptionCounts = subscriptionRepository.countEventsWithSubscriptions();
 
-        Map<String, Long> eventsWithMostSubscriptions = eventSubscriptionCounts.stream()
+        return eventSubscriptionCounts.stream()
                 .collect(Collectors.toMap(
                         objects -> (String) objects[0],
                         objects -> (Long) objects[1]
                 ));
-
-        return eventsWithMostSubscriptions;
     }
 }

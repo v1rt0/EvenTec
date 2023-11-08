@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
-import com.eventec.eventec.models.UserItem.EmailValidationType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -131,12 +130,11 @@ public class RegisterFormController {
                 logger.info("Email confirmed successfully for: {}", email);
                 userItemService.save(userItem);
 
-                String confirmationSuccessUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
+                String localConfirmationSuccessUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
                         .path("/confirmationSuccess.html")
                         .toUriString();
 
-                RedirectView redirectView = new RedirectView(confirmationSuccessUrl);
-                return redirectView;
+                return new RedirectView(localConfirmationSuccessUrl);
             }
         }
 
@@ -144,7 +142,6 @@ public class RegisterFormController {
                 .path("/userNotFound.html")
                 .toUriString();
 
-        RedirectView redirectView = new RedirectView(userNotFoundUrl);
-        return redirectView;
+        return new RedirectView(userNotFoundUrl);
     }
 }
